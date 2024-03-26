@@ -1,3 +1,6 @@
+img{
+  width:100%;
+}
 .login-button{
   display: flex;
   justify-content: flex-end;
@@ -7,6 +10,10 @@
 .nav-section{
   display: flex;
   justify-content: center;
+  margin-bottom:32px;
+}
+.nav-section .logo{
+  width:100px;
 }
 .menu-area{
   display: flex;
@@ -20,4 +27,47 @@
 }
 .menu-list li{
   padding:0 10px;
+}
+.product_box{
+  margin-bottom:30px;
+}
+.product_box:hover{
+  transform: scale(1.1);
+  z-index: 1;
+}
+
+.product_detail{
+  margin-top:10px;
+}
+.thumb a:hover img{
+  width:110%;
+}
+.choice{
+  font-weight: 400;
+  word-break: break-word;
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: 20px;
+  color:#f22441;
+}
+.name{
+  font-weight: 400;
+  word-break: break-word;
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: 20px;
+}
+.price{
+  margin: 2px 0 0;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 20px;
+}
+.icon{
+  font-size: 11px;
+  letter-spacing: 0;
+  line-height: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }

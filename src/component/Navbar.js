@@ -14,8 +14,7 @@ const Navbar = () => {
             </div>
         </div>
         <div className="nav-section">
-            {/* eslint-disable-next-line */}
-            <img width={100} src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/H%26M-Logo.svg/2560px-H%26M-Logo.svg.png"/>
+            <div className='logo'> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/H%26M-Logo.svg/2560px-H%26M-Logo.svg.png" alt="h&amp;m"/></div>
         </div>
         <div className='menu-area'>
             <ul className="menu-list">
