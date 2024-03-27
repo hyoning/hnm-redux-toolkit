@@ -1,8 +1,13 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const ProductCard = ({item}) => {
+  const navigate = useNavigate();
+  const showDetail = () => {
+    navigate(`/product/${item.id}`)
+  }
   return (
-    <div className="product_box">
+    <div className="product_box" onClick={showDetail}>
         <div className="thumb"><img src={item?.img} alt=""/></div>
         <div className='product_detail'>
             <div className="choice">{item?.choice === true ? "Choice" : ""}</div>

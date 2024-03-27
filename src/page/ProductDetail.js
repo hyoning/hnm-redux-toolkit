@@ -1,8 +1,36 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
+import { Container, Row, Col } from 'react-bootstrap';
+import { useParams } from 'react-router-dom'
 
 const ProductDetail = () => {
+  let {id} = useParams();
+  const [product, setProduct] = useState(null);
+ 
+  const getProductDetail = async() => {
+    let url = `http://localhost:3001/products/${id}`;
+    let response = await fetch(url);
+    let data = await response.json();
+    setProduct(data);
+  }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => {
+    getProductDetail();
+  }, [id]);
+  
   return (
-    <div>상품상세페이지</div>
+    <div>
+      <Container>
+        <Row>
+          <Col className="product-img">
+            <img src={product?.img} alt={product?.title}/>
+          </Col>
+          <Col sm={7}>
+            <div>{product?.title}</div>
+            <div>{product?.price}</div>
+          </Col>
+        </Row>
+      </Container>
+    </div>
   )
 }
 
