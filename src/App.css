@@ -41,10 +41,10 @@ img{
 .product_detail{
   margin-top:10px;
 }
-.thumb a:hover img{
+.product_detail .thumb a:hover img{
   width:110%;
 }
-.choice{
+.product_detail .choice{
   font-weight: 400;
   word-break: break-word;
   font-size: 10px;
@@ -52,20 +52,20 @@ img{
   line-height: 20px;
   color:#f22441;
 }
-.name{
+.product_detail  .name{
   font-weight: 400;
   word-break: break-word;
   font-size: 13px;
   letter-spacing: 0;
   line-height: 20px;
 }
-.price{
+.product_detail  .price{
   margin: 2px 0 0;
   font-weight: bold;
   font-size: 13px;
   line-height: 20px;
 }
-.icon{
+.product_detail  .icon{
   font-size: 11px;
   letter-spacing: 0;
   line-height: 20px;
@@ -73,7 +73,31 @@ img{
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.productDetail_wrap{
+  width:100%;
+  margin-top:20px;
+}
 .product-img{
   display: flex;
   justify-content: flex-end;
+}
+.product-cont .name{
+  font-size:1.6em;
+  line-height: 1.6;
+  font-weight: 400;
+}
+.product-cont .price{
+  font-size:1.2em;
+  line-height: 1.6;
+  font-weight: 500;
+}
+.product-cont .choice{
+  font-size:0.8em;
+  line-height: 1.6;
+}
+.mBot10{
+  margin-bottom:10px;
+}
+.product-button{
+  width:100%;
 }
