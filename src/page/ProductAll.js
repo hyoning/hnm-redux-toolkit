@@ -9,7 +9,7 @@ const ProductAll = () => {
     const [query, setQuery] = useSearchParams();
     const getProducts = useCallback(async () => {
         let searchQuery = query.get("q") || "";
-        let url = `http://localhost:3001/products?q=${searchQuery}`;
+        let url = `https://my-json-server.typicode.com/hyoning/hnm-shopping/products?q=${searchQuery}`;
         let response = await fetch(url)
         let data = await response.json()
         setProductList(data);

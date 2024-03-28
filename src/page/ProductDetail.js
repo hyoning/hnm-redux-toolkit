@@ -7,7 +7,7 @@ const ProductDetail = () => {
   const [product, setProduct] = useState(null);
   const [productOption, setProductOption] = useState([]);
   const getProductDetail = useCallback(async() => {
-    let url = `http://localhost:3001/products/${id}`;
+    let url = `https://my-json-server.typicode.com/hyoning/hnm-shopping/products/${id}`;
     let response = await fetch(url);
     let data = await response.json();
     setProduct(data);
