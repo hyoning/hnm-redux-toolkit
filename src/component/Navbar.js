@@ -21,13 +21,13 @@ const Navbar = () => {
         <div className="nav-section">
             <div className='logo'> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/H%26M-Logo.svg/2560px-H%26M-Logo.svg.png" alt="h&amp;m"/></div>
         </div>
-        <div className='menu-area'>
+        <div className="menu-area">
             <ul className="menu-list">
                 {menuList.map(menu =>
                 <li key={menu}>{menu}</li>
                 )}
             </ul>
-            <div className=''>
+            <div className="search-wrap">
                 <FontAwesomeIcon icon={faSearch}/>
                 <input type="text"/>
             </div>

@@ -15,7 +15,7 @@ const ProductAll = () => {
         getProducts()
     },[])
   return (
-    <div>
+    <div className="productAll_wrap">
       <Container>
         <Row>
             {productList.map((menu) => (

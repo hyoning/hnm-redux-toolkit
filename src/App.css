@@ -20,14 +20,27 @@ img{
   display: flex;
   justify-content: center;
   align-items: center;
-
+  position: relative;
+  height: 34px;
+  max-width: 1140px;
+  margin:0 auto;
 }
 .menu-list{
   display: flex;
   list-style-type: none;
+  margin:0;
 }
 .menu-list li{
   padding:0 10px;
+}
+.search-wrap{
+  position: absolute;
+  right: 0;
+  top:0;
+  border-bottom:1px solid #222;
+}
+.search-wrap input{
+  border:none;
 }
 .product_box{
   margin-bottom:30px;
@@ -37,9 +50,9 @@ img{
   transform: scale(1.1);
   z-index: 1;
 }
-
+.productAll_wrap,
 .product_detail{
-  margin-top:10px;
+  margin-top:20px;
 }
 .product_detail .thumb a:hover img{
   width:110%;
