@@ -66,10 +66,13 @@ const Navbar = ({authenticate, setAuthenticate}) => {
                     )}
                 </ul>
             </nav>
-            <div className={`search-wrap ${searchActive? "active" : ""}`}>
+            
+        </div>
+        <div className={`search-wrap ${searchActive? "active" : ""}`}>
+            <div className="search-box">
                 <FontAwesomeIcon icon={faSearch}/>
                 <input type="text" value={searchValue} onChange={(e) => setSearchValue(e.target.value)} onKeyPress={(event) => search(event)}/>
-            </div>
+            </div>            
         </div>
     </div>
   )
