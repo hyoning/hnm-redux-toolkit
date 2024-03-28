@@ -32,11 +32,12 @@ const Navbar = ({authenticate, setAuthenticate}) => {
         setMenuActive(false)
     }
     const search = (event) => {
-        
         if(event.key === "Enter"){
            let keyword = event.target.value
            navigate(`/?q=${keyword}`)
+           setSearchActive(false)
         }
+
     }
   return (
     <div className="header_wrap">
