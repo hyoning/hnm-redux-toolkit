@@ -1,10 +1,19 @@
 img{
   width:100%;
 }
+.header_wrap{
+  width:100%;
+  position: sticky;
+  left:0;
+  top:0;
+  padding:20px;
+  z-index: 99;
+  background-color:rgba(255,255,255,0.3);
+}
 .login-button{
   display: flex;
   justify-content: flex-end;
-  margin:20px;
+  align-items:center;
   gap:5px;
   cursor: pointer;
 }
@@ -12,6 +21,7 @@ img{
   display: flex;
   justify-content: center;
   margin-bottom:32px;
+  cursor: pointer;
 }
 .nav-section .logo{
   width:100px;
@@ -25,22 +35,33 @@ img{
   max-width: 1140px;
   margin:0 auto;
 }
-.menu-list{
+.menu-list ul{
   display: flex;
   list-style-type: none;
   margin:0;
 }
 .menu-list li{
   padding:0 10px;
+  cursor: pointer;
 }
 .search-wrap{
+  display: flex;
   position: absolute;
+  gap:10px;
+  align-items: center;
   right: 0;
   top:0;
   border-bottom:1px solid #222;
 }
+.search-wrap svg{
+  width:16px;
+  flex: 0 0 16px;
+}
 .search-wrap input{
+  flex: 1 1 auto;
   border:none;
+  background: none;
+  width:100%;
 }
 .product_box{
   margin-bottom:30px;
@@ -113,4 +134,87 @@ img{
 }
 .product-button{
   width:100%;
+}
+.nav-button,
+.search-button,
+.close-button{
+  display: none;
+  background:none;
+  border:none;
+}
+.nav-button svg,
+.search-button svg,
+.close-button svg{
+  width: 20px;
+  height: 20px;
+}
+.close-button svg{
+  color:#fff;
+}
+.close-button{
+  position: absolute;
+  right:10px;
+  top:20px;
+  cursor: pointer;
+}
+.menu-list.active{
+  display: block;
+  opacity: 1;
+  width: 80%;
+}
+.menu-list.active .close-button{
+  display: block;
+}
+
+@media (max-width : 1140px) {
+  .nav-section{
+    margin-bottom:0;
+  }
+  .nav-section .logo{
+    width:50px;
+  }
+  .menu-area{
+    position:absolute;
+    left:20px;
+    top:20px;
+  }
+  .nav-button,
+  .search-button{
+    display: block;
+  }
+  
+  .menu-list{
+    display: none;
+    background-color: #cd0118e6;
+    height: 100vh;
+    left: 0;
+    opacity: 0;
+    padding: 55px 0 20px;
+    position: fixed;
+    top: 0;
+    transition: all .5s;
+    width: 0;
+    z-index: 200;
+  }
+  .menu-list ul{
+    flex-direction: column;
+    gap:20px;
+  }
+  .menu-list ul li{
+    color:#fff;
+    font-weight: 600;
+  }
+  .search-wrap.active{
+    display: flex;
+    position:absolute;
+  }
+  .search-wrap{
+    display: none;
+    left: 0;
+    top: 77px;
+    width: calc(100vw - 55px);
+    background-color: rgba(255, 255, 255, 0.3);
+    align-items: center;
+    gap: 10px;
+  }
 }

@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react'
+import { useState} from 'react'
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Routes, Route} from 'react-router-dom'
@@ -19,12 +19,10 @@ import Navbar from './component/Navbar';
 
 function App() {
   const [authenticate, setAuthenticate] = useState(false) // true면 로그인/false로그아웃
-  useEffect(()=>{
-    console.log(authenticate);
-  })
+
   return ( 
     <div className="App">
-        <Navbar/>
+        <Navbar authenticate={authenticate} setAuthenticate={setAuthenticate}/>
         <Routes>
           <Route path="/" element={<ProductAll />}/>
           <Route path="/login" element={<Login setAuthenticate={setAuthenticate}/>}/>
