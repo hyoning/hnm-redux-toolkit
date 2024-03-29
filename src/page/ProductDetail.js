@@ -26,9 +26,12 @@ const ProductDetail = () => {
             <img src={product?.img} alt={product?.title}/>
           </Col>
           <Col lg="7" className="product-cont">
+            <div class="icon_wrap mBot10">
+               {product?.choice === true ? (<p className="icon_choice">CHOICE</p>) : ""}
+               {product?.new === true ? (<p className="icon_new">NEW</p>) : ""}
+            </div>
             <div className="name mBot10">{product?.title}</div>
-            <div className="price mBot10">₩{product?.price}</div>
-            <div className="choice mBot10">{product?.choice === true ? "Conscious Choice":""}</div>
+            <div className="price mBot20">₩{product?.price}</div>
             <div className="option mBot10">
               <Form.Select aria-label="Default select example">
                 <option>사이즈 선택</option>

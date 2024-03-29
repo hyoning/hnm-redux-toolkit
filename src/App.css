@@ -34,6 +34,7 @@ img{
   height: 34px;
   max-width: 1140px;
   margin:0 auto;
+  gap:5px;
 }
 .menu-list ul{
   display: flex;
@@ -74,12 +75,44 @@ img{
   z-index: 1;
 }
 .productAll_wrap,
-.product_detail{
+.productDetail_wrap{
   margin-top:20px;
 }
-.product_detail .thumb a:hover img{
+.product_detail{
+  margin-top:10px;
+}
+.productAll_wrap .thumb a:hover img{
   width:110%;
 }
+.productAll_wrap .thumb {
+  width:100%;
+  position: relative;
+}
+.productAll_wrap .icon_wrap{
+  position: absolute;
+  left:10px;
+  top:10px;
+  display: flex;
+  gap:5px;
+}
+.icon_wrap .icon_choice,
+.icon_wrap .icon_new{
+  padding:3px 5px;
+  border-radius: 10px;
+  color:#fff;
+  display: flex;
+  align-items: center;
+  font-size:0.6em;
+  line-height: 1;
+  margin-bottom:0;
+}
+.icon_choice{
+  background:#cd0118e6;
+}
+.icon_new{
+  background:#222;
+}
+
 .product_detail .choice{
   font-weight: 400;
   word-break: break-word;
@@ -101,14 +134,6 @@ img{
   font-size: 13px;
   line-height: 20px;
 }
-.product_detail  .icon{
-  font-size: 11px;
-  letter-spacing: 0;
-  line-height: 20px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
 .productDetail_wrap{
   width:100%;
   margin-top:20px;
@@ -116,6 +141,13 @@ img{
 .product-img{
   display: flex;
   justify-content: flex-end;
+}
+.product-cont{
+  padding-top:20px;
+}
+.product-cont .icon_wrap{
+  display: flex;
+  gap:5px;
 }
 .product-cont .name{
   font-size:1.6em;
@@ -133,6 +165,9 @@ img{
 }
 .mBot10{
   margin-bottom:10px;
+}
+.mBot20{
+  margin-bottom:20px;
 }
 .product-button{
   width:100%;
@@ -171,6 +206,10 @@ img{
 @media (max-width : 1140px) {
   .nav-section{
     margin-bottom:0;
+    position: absolute;
+    left: 50%;
+    top: 15px;
+    transform: translateX(-50%);
   }
   .nav-section .logo{
     width:50px;
@@ -178,7 +217,7 @@ img{
   .menu-area{
     position:absolute;
     left:20px;
-    top:20px;
+    top:18px;
   }
   .nav-button,
   .search-button{
@@ -212,11 +251,15 @@ img{
   }
   .search-wrap{
     display: none;
-    left: 20px;
-    top: 97px;
-    width: calc(100% - 40px);
+    left: 0;
+    top: 64px;
+    width: 100%;
     background-color: rgba(255, 255, 255, 0.3);
     align-items: center;
     gap: 10px;
+  }
+  .search-box{
+    width:calc(100% - 40px);
+    margin:0 auto;
   }
 }
