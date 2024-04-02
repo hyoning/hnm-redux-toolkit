@@ -1,25 +1,24 @@
-import React, { useEffect, useState, useCallback} from 'react'
+import React, { useEffect} from 'react'
 import { Container, Row, Col } from 'react-bootstrap';
 import ProductCard from '../component/ProductCard';
 import { useSearchParams } from "react-router-dom";
+import { productAction} from '../redux/actions/productAction'
+import { useDispatch, useSelector } from 'react-redux';
 
 const ProductAll = () => {
-    const [productList, setProductList] = useState([]);
+    const productList = useSelector((state) => state.product.productList)
     // eslint-disable-next-line
     const [query, setQuery] = useSearchParams();
-    const getProducts = useCallback(async () => {
-        let searchQuery = query.get("q") || "";
-        let url = `https://my-json-server.typicode.com/hyoning/hnm-shopping/products?q=${searchQuery}`;
-        let response = await fetch(url)
-        let data = await response.json()
-        setProductList(data);
-
-    },[query])
+    const dispatch = useDispatch();
+    const getProducts = () => {
+      let searchQuery = query.get("q") || "";
+      dispatch(productAction.getProducts(searchQuery));
+    }
 
     useEffect(() => {
         getProducts()
-    },[getProducts])
-    console.log(productList);
+        // eslint-disable-next-line
+    },[query])
 
   return (
     <div className="productAll_wrap">

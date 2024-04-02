@@ -9,7 +9,7 @@ const ProductCard = ({item}) => {
   return (
     <div className="product_box" onClick={showDetail}>
         <div className="thumb">
-          <div class="icon_wrap">
+          <div className="icon_wrap">
                {item?.choice === true ? (<p className="icon_choice">CHOICE</p>) : ""}
                {item?.new === true ? (<p className="icon_new">NEW</p>) : ""}
           </div>
