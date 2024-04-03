@@ -1,1 +1,1 @@
-https://peaceful-brigadeiros-a7d38b.netlify.app/
+https://playful-druid-d92dc6.netlify.app/
