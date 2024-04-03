@@ -1,13 +1,5 @@
-import { productActions } from '../reducers/productReducer'
+import { productActions } from '../reducers/productSlice'
 
-function getProducts(searchQuery){
-    return async (dispatch, getState) => {
-        let url = `https://my-json-server.typicode.com/hyoning/hnm-shopping/products?q=${searchQuery}`;
-        let response = await fetch(url)
-        let data = await response.json()
-        dispatch(productActions.getAllProducts({data}))
-    }
-}
 function getDetails(id){
     return async (dispatch) => {
         let url = `https://my-json-server.typicode.com/hyoning/hnm-shopping/products/${id}`;
@@ -18,4 +10,4 @@ function getDetails(id){
         dispatch(productActions.getProductOption({dataSize}))
     }
 }
-export const productAction={getProducts, getDetails}
+export const productAction={getDetails}
