@@ -1,1 +1,1 @@
-https://main--cozy-queijadas-5988fb.netlify.app/
+https://peaceful-brigadeiros-a7d38b.netlify.app/
