@@ -1,5 +1,5 @@
 import productReducer from './reducers/productSlice';
-import authenticateReducer from './reducers/authenticateReducer';
+import authenticateReducer from './reducers/authenticateSlice';
 
 import {configureStore} from '@reduxjs/toolkit'
 

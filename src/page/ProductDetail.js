@@ -1,16 +1,15 @@
 import React, {useEffect} from 'react'
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import { useParams } from 'react-router-dom'
-import { productAction} from '../redux/actions/productAction'
 import { useDispatch, useSelector } from 'react-redux';
+import { fetchDetails } from '../redux/reducers/productSlice';
 
 const ProductDetail = () => {
   let {id} = useParams();
   const product = useSelector((state) => state.product.selectedItem)
-  const optionList = useSelector((state) => state.product.optionList)
   const dispatch = useDispatch();
   const getProductDetail = async() => {
-    dispatch(productAction.getDetails(id));
+    dispatch(fetchDetails(id));
   }
 
   useEffect(() => {
@@ -35,7 +34,7 @@ const ProductDetail = () => {
             <div className="option mBot10">
               <Form.Select aria-label="Default select example">
                 <option>사이즈 선택</option>
-                {optionList.map((item) => <option value={item} key={item}>{item}</option>)}
+                {product?.size.map((item) => <option value={item} key={item}>{item}</option>)}
               </Form.Select>
             </div>
             <Button className="product-button" variant="dark">추가</Button>

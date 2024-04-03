@@ -4,7 +4,7 @@ import {faUser} from '@fortawesome/free-regular-svg-icons'
 import {faSearch,faBars,faXmark} from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { authenticateAction } from '../redux/actions/authenticateAction'
+import {fetchLogout} from '../redux/reducers/authenticateSlice'
 
 const Navbar = () => {
     const menuList = ['여성', 'Divided', '남성', '신생아/유아', '아동', 'H&M HOME', 'Sale', '지속가능성']
@@ -19,7 +19,7 @@ const Navbar = () => {
         navigate('/login');
     };
     const goToLogout = () => {
-        dispatch(authenticateAction.logout());
+        dispatch(fetchLogout());
         navigate('/');
     };
     const goToHome = () =>{

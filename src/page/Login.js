@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import {Form, Button, Container} from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import { authenticateAction } from '../redux/actions/authenticateAction'
+import {fetchLogin} from '../redux/reducers/authenticateSlice'
 
 const Login = () => {
   const [id, setId] = useState('');
@@ -12,7 +12,7 @@ const Login = () => {
 
   const loginUser = (event) => {
     event.preventDefault();
-    dispatch(authenticateAction.login(id, password));
+    dispatch(fetchLogin({id, password}));
     navigate("/");
   }
   return (
